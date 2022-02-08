@@ -1,6 +1,6 @@
-//***********************
-//|     SNAKE GAME      |
-//***********************
+/**********************
+|     SNAKE GAME      |
+**********************/
 #include <iostream>
 #include <conio.h>
 #include <windows.h>
@@ -10,8 +10,8 @@ bool gameOver;
 const int width = 20;
 const int height = 20;
 int x, y, pelletX, pelletY, score;
-int tailX[100], tailY[100];
-int nTail;
+int tailX[100], tailY[100];  //2 Arrays. The x and y coordinates. They move in pairs.
+int nTail;  //Tail length
 enum eDirecton { STOP = 0, LEFT, RIGHT, UP, DOWN };
 eDirecton dir;
 void Setup()
@@ -40,17 +40,17 @@ void Draw()
             if (j == 0)
                 cout << "|"; //Side boarder
             if (i == y && j == x)
-                cout << "o"; //Head
+                cout << "O"; //Head
             else if (i == pelletY && j == pelletX)
                 cout << "*"; //Pellet 
             else
             {
-                bool print = false;
+                bool print = false;             //Draw the snake as it grows.
                 for (int k = 0; k < nTail; k++)
                 {
                     if (tailX[k] == j && tailY[k] == i)
                     {
-                        cout << "x"; //Tail
+                        cout << "o"; //Tail
                         print = true;
                     }
                 }
@@ -98,14 +98,14 @@ void Input()
 }
 void Logic()
 {
-    int prevX = tailX[0];
-    int prevY = tailY[0];
+    int prevX = tailX[0]; //Remember the previous x coordinate of the tail
+    int prevY = tailY[0]; //Remember the previous y coordinate of the tail
     int prev2X, prev2Y;
-    tailX[0] = x;
-    tailY[0] = y;
-    for (int i = 1; i < nTail; i++)
+    tailX[0] = x; // Follow the head
+    tailY[0] = y; // Follow the head
+    for (int i = 1; i < nTail; i++) //Will go to the length of the tail as it grows.
     {
-        prev2X = tailX[i];
+        prev2X = tailX[i]; //Update/print the next segment of the tail.
         prev2Y = tailY[i];
         tailX[i] = prevX;
         tailY[i] = prevY;
