@@ -1,6 +1,3 @@
-/**********************
-|     SNAKE GAME      |
-**********************/
 #include <iostream>
 #include <conio.h>
 #include <windows.h>
@@ -10,8 +7,20 @@ bool gameOver;
 const int width = 20;
 const int height = 20;
 int x, y, pelletX, pelletY, score;
+/* Structure Examples
+struct {
+ int x;
+ int y;
+}pellet;
+*/
 int tailX[100], tailY[100];  //2 Arrays. The x and y coordinates. They move in pairs.
 int nTail;  //Tail length
+/*struct {
+ Int speed; 
+ Int len; 
+ Int x [snakesize]; 
+ Int y [snakesize];
+*/
 enum eDirecton { STOP = 0, LEFT, RIGHT, UP, DOWN };
 eDirecton dir;
 void Setup()
