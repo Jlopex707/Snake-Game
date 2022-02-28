@@ -1,3 +1,6 @@
+/**********************
+|     SNAKE GAME      |
+**********************/
 #include <iostream>
 #include <conio.h>
 #include <windows.h>
@@ -155,6 +158,67 @@ void Logic()
         pelletY = rand() % height;
         nTail++;
     }
+    /*      |High Score Board|
+    {
+    FILE *fPtr;
+    char HighScoreTable[100];
+    char yourScore[Buffer_Size];
+
+    fPtr = fopen("HighScoreBoard.txt", "a");
+         {
+         if (fPtr == NULL)
+         printf("\nUnable to open '%s' \n",HighScoreTable.txt);
+         printf("Please check whether file exists and you have write privilege.\n");
+         exit(EXIT_FAILURE);
+    printf(fPtr, "Enter Your Score:\n")   
+    fflush(stdin);
+    fgets(yourScore, Buffer_Size, stdin);
+    fputs(yourScore, fPtr);
+    fPtr = freopen("HighScoreBoard", "r", fPtr);
+    fclose(fPtr);
+    }
+         |Validation Input|
+     int yourScore, input;
+     yourScore = scanf("%d", &input);
+     while(yourScore !=1,1000)
+     {
+     printf("Invalid Score, try again: ");
+     status = scanf("%d", &input);
+     }
+
+    */
+    /*      |Error Logging|
+    FILE *fp1;
+    fp1 = fopen("/sys/class/gpio/export","w"); 
+    if(fp1 == NULL){
+        FILE *fpErr = fopen("/home/log.txt", "a");
+        if(fpErr != NULL)
+             fprintf(fpErr, "errno:%s - opening GPIO136 failed - line 739\n ", strerror(errno));
+        close(fpErr);
+        close(fp1);
+        exit(1);
+    {
+
+            |Login|
+    printf("Enter your username:\n");
+    scanf("%s",&username);
+
+    printf("Enter your password:\n");
+    scanf("%s",&password);
+
+         if(strcmp(username,"chaitu")==0){
+         if(strcmp(password,"123")==0){
+
+         printf("\nWelcome.Login Success!");
+
+
+         else{ printf("\nwrong password");
+         printf("\nwrong password");
+
+         else
+            printf("\nUser doesn't exist");
+}
+    */
 }
 int main()
 {
